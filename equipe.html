@@ -38,12 +38,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
+    <!-- Polices Google -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Syne:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Syne:wght@700&display=swap"></noscript>
     
-    <link rel="stylesheet" href="style-reen.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style-reen-hyperstyle.css"></noscript>
+    <!-- VOTRE UNIQUE FEUILLE DE STYLE PRINCIPALE (chargée de manière bloquante) -->
+    <link rel="stylesheet" href="style-reen.css"> 
+    <!-- La balise noscript pour style-reen.css devient moins critique ici, mais si vous la gardez :
+    <noscript><link rel="stylesheet" href="style-reen.css"></noscript>
+    -->
     
+    <!-- Font Awesome (chargé de manière non bloquante) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'"/>
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
@@ -59,6 +64,7 @@
         { "@type": "Person", "name": "[Prénom NOM Président(e)]", "jobTitle": "Président(e)" },
         { "@type": "Person", "name": "[Prénom NOM Secrétaire]", "jobTitle": "Secrétaire Général(e)" },
         { "@type": "Person", "name": "[Prénom NOM Trésorier]", "jobTitle": "Trésorier(ère) Général(e)" }
+        // Ajoutez d'autres membres clés ici si nécessaire pour les données structurées
       ],
       "address": {
         "@type": "PostalAddress",
@@ -74,8 +80,15 @@
     }
     </script>
     
+    <!-- Styles inline pour le logo et les titres de catégorie (conservés pour leur spécificité) -->
+    <!-- Idéalement, déplacez aussi .team-category et .team-category__title dans style-reen.css si possible -->
     <style>
-        .logo__text-wrapper { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
+        .logo__text-wrapper { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            line-height: 1.1; 
+        }
         .logo__tagline {
             font-size: 0.65rem; 
             font-family: var(--font-primary, 'Inter', sans-serif); 
@@ -84,11 +97,31 @@
             display: block; 
             margin-top: 2px; 
         }
-        .site-header__logo.logo { align-items: center; }
-        .team-category { margin-bottom: 3rem; display: flex; flex-direction: column; align-items: center; }
-        .team-category__title { font-family: var(--font-secondary); font-size: clamp(1.6rem, 3.8vw, 2.5rem); color: var(--clr-text-headings); margin-bottom: 2rem; text-align: center; border-bottom: 2px solid var(--clr-primary-light); padding-bottom: 0.75rem; display: inline-block; }
+        .site-header__logo.logo { 
+            align-items: center; 
+        }
+
+        /* Ces styles sont spécifiques à la page équipe, 
+           ils peuvent rester ici ou être déplacés dans style-reen.css */
+        .team-category { 
+            margin-bottom: 3rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-category__title { 
+            font-family: var(--font-secondary); 
+            font-size: clamp(1.6rem, 3.8vw, 2.5rem); 
+            color: var(--clr-text-headings); 
+            margin-bottom: 2rem; 
+            text-align: center; 
+            border-bottom: 2px solid var(--clr-primary-light); 
+            padding-bottom: 0.75rem; 
+            display: inline-block; 
+        }
     </style>
 </head>
+
 
 <body>
     <a href="#main-content-equipe" class="skip-link">Passer au contenu principal</a>
